@@ -1,6 +1,4 @@
-# Documentation: https://docs.brew.sh/Formula-Cookbook.html
-#                http://www.rubydoc.info/github/Homebrew/brew/master/Formula
-# PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
+require "language/go"
 
 class MongodbAT3218 < Formula
   desc "High-performance, schema-free, document-oriented database"
