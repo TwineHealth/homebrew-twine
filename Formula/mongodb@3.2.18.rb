@@ -15,6 +15,7 @@ class MongodbAT3218 < Formula
 
   depends_on "boost" => :optional
   depends_on "go" => :build
+  depends_on :macos => :mountain_lion
   depends_on "scons" => :build
   depends_on "openssl" => :recommended
 
