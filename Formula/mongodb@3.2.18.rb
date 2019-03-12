@@ -15,7 +15,6 @@ class MongodbAT3218 < Formula
 
   depends_on "boost" => :optional
   depends_on "go" => :build
-  depends_on :macos => :mountain_lion
   depends_on "scons" => :build
   depends_on "openssl" => :recommended
 
@@ -25,8 +24,6 @@ class MongodbAT3218 < Formula
         :revision => "f207093c46939fd42f12980a058370c013c26338",
         :shallow => false
   end
-
-  needs :cxx11
 
   def install
     ENV.cxx11 if MacOS.version < :mavericks
@@ -74,7 +71,7 @@ class MongodbAT3218 < Formula
       args << "LINKFLAGS=-L#{Formula["openssl"].opt_lib}"
     end
 
-    scons "install", *args
+    system "scons", "install", *args
 
     (buildpath+"mongod.conf").write mongodb_conf
     etc.install "mongod.conf"
